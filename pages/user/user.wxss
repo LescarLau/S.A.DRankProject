@@ -1,0 +1,159 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+  /* background-color: #000000; */
+}
+
+.container {
+  background-color: #ffffff;
+  height: 18vh;
+  padding: 20px;
+  margin-bottom: 5px;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+  width: 80%;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 136rpx;
+  height: 136rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.avatar-wrapper {
+  padding: 0;
+  width: 70px !important;
+  border-radius: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 20px;
+  left: 36px;
+}
+
+.avatar {
+  display: block;
+  width: 70px;
+  height: 70px;
+}
+
+.add-icon{
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 89px;
+  top: 89px;
+  z-index: 1;
+}
+
+.nickname-wrapper {
+  display: flex;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  color: black;
+  position: absolute;
+  left: 90px;
+  top: 30px;
+}
+
+.nickname-label {
+  width: 105px;
+  font-size: 15px; /* 调整字体大小 */
+  font-weight: bold; /* 使字体加粗 */
+  margin: 0px 18px;
+  position: absolute;
+  top: 10px;
+}
+
+
+.nickname-input {
+  flex: 1;
+}
+
+/* app.wxss */
+.background-image {
+  width: 25%;
+  height: 25%;
+  position: absolute;
+  z-index: -1;
+  top: 70%;
+  left: 49%;
+  transform: translate(-50%, -50%); /* 将元素移动其自身的宽度和高度的一半 */
+}
+
+web-view {
+  width: 10%;
+  height: 50vh;
+}
+
+.checkin-list {
+  display: inline-block;
+  border: solid #000000;
+  border-width: 3px; /* 根据需要调整边框宽度 */
+  border-radius: 50px / 50px; /* 设置水平和垂直的半径 */
+  font-size: small;
+  padding: 8px; /* 可根据需要调整内边距 */
+  width: 120px !important;
+  position: absolute;
+  left: 120px;
+  top: 65px;
+  margin: 5px 5px;
+}
+
+.checkin-list image,
+.checkin-list text {
+  vertical-align: middle; /* 垂直居中对齐 */
+  margin: 0 0px;
+}
+
+.select-list {
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx;
+  background-color: #ffffff;
+  height: 100vh;
+  margin-top: 10px;
+}
+
+.select-item {
+  padding: 40rpx;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.select-label {
+  font-size: 15px;
+  color: #333;
+}
+
+.divider {
+  height: 1px;
+  background-color: #ddd; /* 横线的颜色 */
+  margin: 0 10rpx; /* 可根据需要调整左右间距 */
+}
+
+.select-item .next {
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  right: 10px;
+}

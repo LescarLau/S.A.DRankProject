@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<user wx:if="{{pageCur == 'user'}}" style="height: 304rpx; display: block; box-sizing: border-box"></user>
+<map wx:if="{{pageCur == 'map'}}"></map>
+<rank wx:if="{{pageCur == 'rank'}}"></rank>
+
+<view class="fu-bar shadow foot">
+  <view class="cell" bindtap="navChange" data-cur="map">
+		<view class="image">
+			<image src="/images/logo/map{{pageCur == 'map' ? '_selected' : ''}}.png"></image>
+		</view>
+	</view>
+  <view class="cell" bindtap="navChange" data-cur="rank">
+		<view class="image">
+			<image src="/images/logo/rank{{pageCur == 'rank' ? '_selected' : ''}}.png"></image>
+		</view>
+	</view>
+  <view class="cell" bindtap="navChange" data-cur="user">
+		<view class="image">
+			<image src="/images/logo/user{{pageCur == 'user' ? '_selected' : ''}}.png"></image>
+		</view>
+	</view>
+</view>
