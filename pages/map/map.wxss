@@ -1,110 +1,89 @@
-/* location_check_in/location_check_in.wxss */
-Page{
-  background-color: #f2f2f2;
-}
-.wholeContinaer{
+/* pages/map/map.wxss */
+.container {
   position: relative;
-  height: 100vh;
 }
- 
-.mapContianer{
-  background-color: turquoise;
+
+.blacklogo {
+  width: 57px;
+  height: 44px;
+  position: absolute;
+  top: 0px;
+  left: 15px;
+  margin: 2px 4px;
+}
+
+.nowtime {
+  font-size: 13px;
+  color: #aaaaaa;
+  font-weight: 450;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.title {
+  display: grid;
+  position: absolute;
   width: 100vw;
-  height: 100vh;
+  /* top: 20px; */
+  left: 20px;
+  margin-top: 80px;
 }
- 
-.checkInPanel{
+
+.welcome {
+  display: inline-block;
+  font-size: 25px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.slogan {
+  font-size: 25px;
+  color: #aaaaaa;
+}
+
+.map {
+  position: relative;
+  left: 43px;
+  top: 190px;
+  border-radius: 10%;
+}
+
+#checkin-title {
+  display: inline-block; /* 或者使用 block，如果你希望它占据一整行 */
+  padding: 10px 20px; /* 添加内边距，增加背景区域 */
+  background-color: #000000; /* 设置背景颜色 */
+  color: antiquewhite;
+  width: auto; /* 如果你希望宽度自适应文本内容 */
+  min-width: 305px; /* 或者设置一个最小宽度 */
+  font-size: 20px;
+}
+
+.challenge {
+  position: relative;
+  top: 250px;
+  left: 80px;
+}
+
+.challenge-logo{
+  width: 45px;
+  height: 45px;
   position: absolute;
-  width: 705rpx;
-  height: 520rpx;
-  bottom: 25rpx;
-  left: 25rpx;
-  /* background-color: #ffffff; */
+  top: -5%;
 }
-.checkInBtn{
-  width: 280rpx;
-  height: 280rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: absolute;
-  left: calc(50% - 140rpx);
-  top: -150px;
-  z-index: 12;
- 
-  border-radius: 50%;
-  background-image: linear-gradient(180deg, 
-      #00a0e9 0%, 
-      #0095e9 73%, 
-      #0089e9 100%);
-  box-shadow: 0 0 10rpx 0rpx #0089e9;
-  /* margin: 0 auto; */
+
+.challenge-title {
+  font-size: 18px;
+  margin-left: 70px;
+  font-weight: bold;
 }
-.disableClick{
-  pointer-events: none;
+
+
+.sport-logo{
+  width: 200px;
+  height: 160px;
+  margin-top: 5px;
 }
-.checkInTitle{
-  font-size: 36rpx;
-  line-height: 34rpx;
-  color: #ffffff;
-}
-.checkInTime{
-  font-size: 24rpx;
-  line-height: 34rpx;
-  color: #8cd7fe;
-  margin-top: 10rpx;
-}
- 
-.whitePositionPanel{
-  width: 100%;
-  height: 712rpx;
-  position: absolute;
-  bottom: 0rpx;
- 
-  background-color: #ffffff;
-  border-radius: 10rpx;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
- 
-.positonTextRow{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 80rpx;
-}
-.positonTextRow .positionIcon{
-  width: 20rpx;
-  height: 26rpx;
-  margin-right: 10rpx;
-}
-.positonTextRow .positionFont{
-  font-size: 22rpx;
-  line-height: 29rpx;
-  color: #9c9c9c;
-}
- 
-.rePosition{
-  width: 130rpx;
-  height: 35rpx;
-  background-color: #ffffff;
-  border-radius: 10rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: -235rpx;
-}
-.rePosition .positionIcon{
-  width: 24rpx;
-  height: 24rpx;
-  margin-right: 10rpx;
-}
-.rePosition .positionFont{
-  font-size: 18rpx;
-  color: #333333;
-  line-height: 35rpx;
-}
+

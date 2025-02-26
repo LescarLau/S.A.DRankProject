@@ -1,24 +1,21 @@
-<!--location_check_in/location_check_in.wxml-->
-<view class="wholeContinaer">
-	<map id="myMap" markers="{{markers}}" style="width:100%;height:100vh;" longitude="{{poi.longitude}}" latitude="{{poi.latitude}}" scale='16' show-location>
-	</map>
- 
-	<view class="checkInPanel">
-		<!-- <view class="checkInBtn" bindtap="checkIn" style="background:url('../../images/zcxj/checkInBj.png') center / contain no-repeat"> -->
-		<view class="checkInBtn {{canClick ? '' : 'disableClick'}}" bindtap="checkIn">
-			<view class="checkInTitle">签到</view>
-			<view class="checkInTime">{{time}}</view>
-		</view>
-		<!-- <view class="whitePositionPanel" style="background:url('../../images/zcxj/jxk.png') center / contain no-repeat"> -->
-		<view class="whitePositionPanel">
-			<view class="positonTextRow">
-				<image class="positionIcon" src="../../images/zcxj/positionIcon.png"></image>
-				<view class="positionFont">{{addressName}}</view>
-			</view>
-		</view>
-		<view class="rePosition" bindtap="rePosition">
-			<image class="positionIcon" src="../../images/zcxj/rePosition.png"></image>
-			<view class="positionFont">重新定位</view>
-		</view>
-	</view>
+<view class="container">
+  <view class="logo">
+    <image class="blacklogo" src="/images/logo/sad_logo_black.png"></image>
+    <text class="nowtime">当前时间：{{currentTime}}</text> 
+  </view>
+  <view class="title">
+    <text class="welcome">欢迎来到S.A.D SKATE CLUB,</text>
+    <text class="slogan">SKATE ALONE DENIED</text>
+  </view>
+  <view class="map">
+    <text id="checkin-title">打卡签到，成为“扛把子”</text>
+    <map id="myMap" markers="{{markers}}" style="width:345px;height:150px;" longitude="{{poi.longitude}}" latitude="{{poi.latitude}}" scale='16' show-location>
+	  </map>  
+  </view>
+  <view class="challenge">
+    <image class="challenge-logo" src="/images/map/challenge.png"></image>
+    <text class="challenge-title" >加入签到挑战</text>
+    <image class="sport-logo" src="/images/map/sport.png"></image>
+  </view>
 </view>
+
