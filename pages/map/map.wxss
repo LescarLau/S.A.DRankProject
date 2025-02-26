@@ -1,6 +1,8 @@
 /* pages/map/map.wxss */
 .container {
   position: relative;
+  height: 100vh;
+  width: 100vw;
 }
 
 .blacklogo {
@@ -46,7 +48,7 @@
 
 .map {
   position: relative;
-  left: 43px;
+  left: 0px;
   top: 190px;
   border-radius: 10%;
 }
