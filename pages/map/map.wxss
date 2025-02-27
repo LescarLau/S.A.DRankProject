@@ -1,8 +1,19 @@
 /* pages/map/map.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* 防止页面超出范围 */
+}
+
 .container {
   position: relative;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 对齐内容 */
+  padding: 0 5vw; /* 自动填充左右空间 */
 }
 
 .blacklogo {
