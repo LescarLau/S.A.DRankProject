@@ -1,0 +1,166 @@
+/* pages/ranking/ranking.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f8f8f8;
+}
+
+.tab-header {
+  display: flex;
+  background-color: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 30rpx 0;
+  font-size: 30rpx;
+  color: #666;
+  position: relative;
+}
+
+.tab-item.active {
+  color: #07c160;
+  font-weight: bold;
+}
+
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60rpx;
+  height: 6rpx;
+  background-color: #07c160;
+  border-radius: 3rpx;
+}
+
+.tab-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+.ranking-list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-header {
+  display: flex;
+  padding: 20rpx 30rpx;
+  background-color: #f0f0f0;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.header-rank {
+  width: 100rpx;
+  text-align: center;
+}
+
+.header-user {
+  flex: 1;
+}
+
+.header-count {
+  width: 150rpx;
+  text-align: right;
+}
+
+.scroll-list {
+  flex: 1;
+}
+
+.rank-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.top-rank {
+  background-color: #fffdf0;
+}
+
+.rank-number {
+  width: 100rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #666;
+}
+
+.rank-1, .rank-2, .rank-3 {
+  font-weight: bold;
+  color: #fff;
+  border-radius: 30rpx;
+}
+
+.rank-1 {
+  background-color: #ffb800;
+}
+
+.rank-2 {
+  background-color: #c0c0c0;
+}
+
+.rank-3 {
+  background-color: #cd7f32;
+}
+
+.user-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.user-name {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.boss-tag {
+  margin-left: 20rpx;
+  padding: 4rpx 10rpx;
+  background-color: #ff4d4f;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 10rpx;
+}
+
+.check-in-count {
+  width: 150rpx;
+  text-align: right;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.spot-selector {
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.picker {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 20rpx;
+  border: 1rpx solid #eee;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #333;
+}

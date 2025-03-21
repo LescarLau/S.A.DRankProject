@@ -1,0 +1,130 @@
+/* pages/spotMap/spotMap.wxss */
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.add-spot-btn {
+  position: absolute;
+  right: 30rpx;
+  bottom: 30rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #07c160;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.add-icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.spot-info-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 20rpx 20rpx 0 0;
+  box-shadow: 0 -4rpx 10rpx rgba(0, 0, 0, 0.1);
+  padding: 30rpx;
+  box-sizing: border-box;
+  z-index: 20;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.spot-name {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.close-btn {
+  font-size: 40rpx;
+  color: #999;
+  padding: 0 10rpx;
+}
+
+.spot-details {
+  margin-bottom: 30rpx;
+}
+
+.detail-item {
+  display: flex;
+  margin-bottom: 15rpx;
+}
+
+.label {
+  color: #666;
+  width: 150rpx;
+}
+
+.value {
+  flex: 1;
+  color: #333;
+}
+
+.boss-item {
+  align-items: center;
+}
+
+.boss-info {
+  display: flex;
+  align-items: center;
+}
+
+.boss-avatar {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.boss-name {
+  font-size: 28rpx;
+  color: #333;
+  margin-right: 10rpx;
+}
+
+.boss-count {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-btn {
+  flex: 1;
+  margin: 0 10rpx;
+  font-size: 28rpx;
+  padding: 15rpx 0;
+}
+
+.check-in-btn {
+  background-color: #07c160;
+  color: #fff;
+}
+
+.nav-btn {
+  background-color: #f8f8f8;
+  color: #333;
+}

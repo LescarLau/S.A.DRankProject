@@ -1,0 +1,44 @@
+<!-- pages/userProfile/userProfile.wxml -->
+<view class="container">
+  <view class="user-info-section">
+    <block wx:if="{{isLogin}}">
+      <view class="avatar-container">
+        <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+      </view>
+      <view class="user-name">{{userInfo.nickName}}</view>
+      
+      <view class="stats-container">
+        <view class="stat-item">
+          <view class="stat-value">{{checkInStats.totalDays}}</view>
+          <view class="stat-label">累计签到天数</view>
+        </view>
+        <view class="stat-item">
+          <view class="stat-value">{{checkInStats.totalSpots}}</view>
+          <view class="stat-label">到访Spot数</view>
+        </view>
+        <view class="stat-item">
+          <view class="stat-value">{{checkInStats.bossSpots}}</view>
+          <view class="stat-label">扛把子数量</view>
+        </view>
+      </view>
+    </block>
+    
+    <block wx:else>
+      <view class="not-login">
+        <view class="login-tips">请登录查看个人信息</view>
+        <button class="login-btn" bindtap="handleLogin">微信登录</button>
+      </view>
+    </block>
+  </view>
+  
+  <view class="user-actions" wx:if="{{isLogin}}">
+    <navigator url="/pages/myCheckIns/myCheckIns" class="action-item">
+      <view class="action-icon"></view>
+      <view class="action-text">我的签到记录</view>
+    </navigator>
+    <navigator url="/pages/myBossSpots/myBossSpots" class="action-item">
+      <view class="action-icon"></view>
+      <view class="action-text">我的扛把子</view>
+    </navigator>
+  </view>
+</view>

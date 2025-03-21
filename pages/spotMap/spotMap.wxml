@@ -1,0 +1,48 @@
+<!-- pages/spotMap/spotMap.wxml -->
+<view class="container">
+  <map
+    id="map"
+    longitude="{{longitude}}"
+    latitude="{{latitude}}"
+    scale="{{scale}}"
+    markers="{{markers}}"
+    show-location
+    bindmarkertap="markerTap"
+    class="map"
+  ></map>
+  
+  <view class="add-spot-btn" bindtap="addNewSpot">
+    <image class="add-icon" src="/images/add.png"></image>
+  </view>
+  
+  <view class="spot-info-panel" wx:if="{{showSpotInfo}}">
+    <view class="panel-header">
+      <view class="spot-name">{{currentSpot.name}}</view>
+      <view class="close-btn" bindtap="closeSpotInfo">×</view>
+    </view>
+    
+    <view class="spot-details">
+      <view class="detail-item">
+        <view class="label">地址：</view>
+        <view class="value">{{currentSpot.address}}</view>
+      </view>
+      <view class="detail-item">
+        <view class="label">累计签到：</view>
+        <view class="value">{{currentSpot.checkInCount}}次</view>
+      </view>
+      <view class="detail-item boss-item">
+        <view class="label">扛把子：</view>
+        <view class="boss-info">
+          <image class="boss-avatar" src="{{currentSpot.bossUser.avatarUrl}}"></image>
+          <view class="boss-name">{{currentSpot.bossUser.nickName}}</view>
+          <view class="boss-count">({{currentSpot.bossUser.checkInCount}}次)</view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="action-buttons">
+      <button class="action-btn check-in-btn" bindtap="handleCheckIn">签到打卡</button>
+      <button class="action-btn nav-btn" bindtap="handleNavigation">导航前往</button>
+    </view>
+  </view>
+</view>

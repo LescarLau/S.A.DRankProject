@@ -1,49 +1,80 @@
-// index.js
-const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+const app = getApp();
 
 Page({
   data: {
-    motto: 'Skate Alone Denied',
-    userInfo: {
-      avatarUrl: defaultAvatarUrl,
-      nickName: '',
-    },
-    hasUserInfo: false,
-    canIUseGetUserProfile: wx.canIUse('getUserProfile'),
-    canIUseNicknameComp: wx.canIUse('input.type.nickname'),
+    isLogin: false,
+    userInfo: null
   },
-  bindViewTap() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+
+  onLoad: function () {
+    this.checkLoginStatus();
   },
-  onChooseAvatar(e) {
-    const { avatarUrl } = e.detail
-    const { nickName } = this.data.userInfo
+
+  onShow: function () {
+    this.checkLoginStatus();
+  },
+
+  // 检查登录状态
+  checkLoginStatus: function () {
+    const isLogin = app.globalData.isLogin;
+    const userInfo = app.globalData.userInfo;
+    
     this.setData({
-      "userInfo.avatarUrl": avatarUrl,
-      hasUserInfo: nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
-    })
+      isLogin: isLogin,
+      userInfo: userInfo
+    });
   },
-  onInputChange(e) {
-    const nickName = e.detail.value
-    const { avatarUrl } = this.data.userInfo
-    this.setData({
-      "userInfo.nickName": nickName,
-      hasUserInfo: nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
-    })
-  },
-  getUserProfile(e) {
-    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
+
+  // 处理登录
+  handleLogin: function () {
     wx.getUserProfile({
-      desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      desc: '用于完善用户资料',
       success: (res) => {
-        console.log(res)
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
+        const userInfo = res.userInfo;
+        
+        // 模拟登录成功
+        app.globalData.isLogin = true;
+        app.globalData.userInfo = {
+          ...userInfo,
+          openId: 'user_' + Math.random().toString(36).substr(2, 9),
+          totalDays: Math.floor(Math.random() * 100),
+          bossCount: Math.floor(Math.random() * 5)
+        };
+        
+        this.checkLoginStatus();
+      },
+      fail: (err) => {
+        console.error('登录失败', err);
+        wx.showToast({
+          title: '登录失败',
+          icon: 'none'
+        });
       }
-    })
+    });
   },
-})
+
+  // 导航到我的场地
+  navigateToMySpots: function () {
+    wx.showToast({
+      title: '功能开发中',
+      icon: 'none'
+    });
+  },
+
+  // 导航到签到记录
+  navigateToCheckInHistory: function () {
+    wx.showToast({
+      title: '功能开发中',
+      icon: 'none'
+    });
+  },
+
+  // 显示关于信息
+  showAbout: function () {
+    wx.showModal({
+      title: '关于我们',
+      content: 'S.A.D Rank - 滑板场地签到排名小程序\n\n为滑板爱好者提供场地签到和排名服务',
+      showCancel: false
+    });
+  }
+});

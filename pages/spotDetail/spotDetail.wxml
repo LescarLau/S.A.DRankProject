@@ -1,0 +1,56 @@
+<!-- pages/spotDetail/spotDetail.wxml -->
+<view class="container" wx:if="{{spot}}">
+  <view class="spot-header">
+    <view class="spot-name">{{spot.name}}</view>
+    <view class="spot-address">{{spot.address}}</view>
+    
+    <view class="spot-stats">
+      <view class="stat-item">
+        <view class="stat-value">{{spot.checkInCount}}</view>
+        <view class="stat-label">累计签到</view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="spot-description" wx:if="{{spot.description}}">
+    <view class="section-title">场地介绍</view>
+    <view class="description-content">{{spot.description}}</view>
+  </view>
+  
+  <view class="boss-section">
+    <view class="section-title">当前扛把子</view>
+    <view class="boss-info">
+      <image class="boss-avatar" src="{{spot.bossUser.avatarUrl}}"></image>
+      <view class="boss-detail">
+        <view class="boss-name">{{spot.bossUser.nickName}}</view>
+        <view class="boss-count">累计签到 {{spot.bossUser.checkInCount}} 次</view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="ranking-section">
+    <view class="section-title">签到排行</view>
+    <view class="ranking-list">
+      <block wx:for="{{checkInRanking}}" wx:key="rank">
+        <view class="rank-item">
+          <view class="rank-number">{{item.rank}}</view>
+          <view class="user-info">
+            <image class="user-avatar" src="{{item.avatarUrl}}"></image>
+            <text class="user-name">{{item.nickName}}</text>
+          </view>
+          <view class="check-in-count">{{item.checkInCount}}次</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  
+  <view class="action-buttons">
+    <button 
+      class="action-btn check-in-btn {{userCheckedIn ? 'checked' : ''}}" 
+      bindtap="handleCheckIn"
+    >
+      {{userCheckedIn ? '今日已签到' : '签到打卡'}}
+    </button>
+    <button class="action-btn nav-btn" bindtap="handleNavigation">导航前往</button>
+  </view>
+</view>

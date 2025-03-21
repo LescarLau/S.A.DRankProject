@@ -1,0 +1,72 @@
+<!-- pages/ranking/ranking.wxml -->
+<view class="container">
+  <view class="tab-header">
+    <view class="tab-item {{activeTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-tab="0">
+      总榜
+    </view>
+    <view class="tab-item {{activeTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-tab="1">
+      地点榜
+    </view>
+  </view>
+  
+  <view class="tab-content">
+    <!-- 总榜 -->
+    <view class="ranking-list" wx:if="{{activeTab === 0}}">
+      <view class="list-header">
+        <text class="header-rank">排名</text>
+        <text class="header-user">用户</text>
+        <text class="header-count">签到天数</text>
+      </view>
+      
+      <scroll-view scroll-y class="scroll-list">
+        <block wx:for="{{totalRanking}}" wx:key="rank">
+          <view class="rank-item {{item.rank <= 3 ? 'top-rank' : ''}}">
+            <view class="rank-number {{item.rank === 1 ? 'rank-1' : item.rank === 2 ? 'rank-2' : item.rank === 3 ? 'rank-3' : ''}}">
+              {{item.rank}}
+            </view>
+            <view class="user-info">
+              <image class="user-avatar" src="{{item.avatarUrl}}"></image>
+              <text class="user-name">{{item.nickName}}</text>
+            </view>
+            <view class="check-in-count">{{item.checkInDays}}天</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    
+    <!-- 地点榜 -->
+    <view class="spot-ranking" wx:if="{{activeTab === 1}}">
+      <view class="spot-selector">
+        <picker bindchange="changeSpot" value="{{currentSpotId}}" range="{{spots}}" range-key="name">
+          <view class="picker">
+            当前地点：{{spots.length > 0 ? currentSpotName : '无数据'}}
+          </view>
+        </picker>
+      </view>
+      
+      <view class="ranking-list">
+        <view class="list-header">
+          <text class="header-rank">排名</text>
+          <text class="header-user">用户</text>
+          <text class="header-count">签到次数</text>
+        </view>
+        
+        <scroll-view scroll-y class="scroll-list">
+          <block wx:for="{{spotRanking}}" wx:key="rank">
+            <view class="rank-item {{item.rank <= 3 ? 'top-rank' : ''}}">
+              <view class="rank-number {{item.rank === 1 ? 'rank-1' : item.rank === 2 ? 'rank-2' : item.rank === 3 ? 'rank-3' : ''}}">
+                {{item.rank}}
+              </view>
+              <view class="user-info">
+                <image class="user-avatar" src="{{item.avatarUrl}}"></image>
+                <text class="user-name">{{item.nickName}}</text>
+                <view class="boss-tag" wx:if="{{item.isBoss}}">扛把子</view>
+              </view>
+              <view class="check-in-count">{{item.checkInCount}}次</view>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,69 @@
+<!-- pages/addSpot/addSpot.wxml -->
+<view class="container">
+  <view class="map-container">
+    <map
+      id="map"
+      longitude="{{longitude}}"
+      latitude="{{latitude}}"
+      scale="16"
+      show-location
+      bindtap="mapTap"
+      class="map"
+    >
+      <cover-view class="map-marker">
+        <cover-image class="marker-image" src="/images/marker.png"></cover-image>
+      </cover-view>
+      <cover-view class="map-tip">点击地图选择准确位置</cover-view>
+    </map>
+  </view>
+  
+  <view class="form-container">
+    <view class="form-item">
+      <view class="form-label">Spot名称</view>
+      <input 
+        class="form-input" 
+        placeholder="请输入滑板场地名称" 
+        value="{{name}}"
+        data-field="name"
+        bindinput="inputChange"
+      />
+    </view>
+    
+    <view class="form-item">
+      <view class="form-label">地址</view>
+      <input 
+        class="form-input" 
+        placeholder="地址信息" 
+        value="{{address}}"
+        data-field="address"
+        bindinput="inputChange"
+      />
+    </view>
+    
+    <view class="form-item">
+      <view class="form-label">描述</view>
+      <textarea 
+        class="form-textarea" 
+        placeholder="添加关于这个Spot的描述信息（可选）" 
+        value="{{description}}"
+        data-field="description"
+        bindinput="inputChange"
+      ></textarea>
+    </view>
+    
+    <view class="form-item location-item">
+      <view class="form-label">位置坐标</view>
+      <view class="location-info">
+        <text>纬度: {{latitude}}</text>
+        <text>经度: {{longitude}}</text>
+      </view>
+    </view>
+    
+    <button 
+      class="submit-btn" 
+      bindtap="submitForm" 
+      loading="{{isSubmitting}}" 
+      disabled="{{isSubmitting}}"
+    >提交</button>
+  </view>
+</view>
